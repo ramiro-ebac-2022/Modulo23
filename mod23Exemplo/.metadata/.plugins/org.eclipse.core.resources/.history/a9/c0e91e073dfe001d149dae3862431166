@@ -1,0 +1,47 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Streams2 {
+    
+    public static void main(String[] args) {
+        List<Pessoa> pessoas = new ArrayList<Pessoa>();
+
+        //Carga dos dados
+        pessoas.add(new Pessoa("Ramiro","M"));
+        pessoas.add(new Pessoa("Vilma","F"));
+        pessoas.add(new Pessoa("Arlet","F"));
+        pessoas.add(new Pessoa("Oscar","M"));
+        pessoas.add(new Pessoa("Moisés","M"));
+        
+        GrupoPessoas gp = new GrupoPessoas(pessoas, null, null);
+        
+        System.out.println(gp.toString());
+
+        //Impressão dos dados
+		//System.out.println("");
+		//imprimePessoa(pessoas);
+
+    }
+
+    private static void imprimePessoa(List<Pessoa> pessoas) {
+    
+        System.out.println("Pessoas do sexo Masculino :");
+		System.out.println("---------------------------");
+		List<Pessoa> masculino = pessoas.stream()
+                                .filter(pessoa -> pessoa.getSexo().startsWith("M"))
+                                .collect(Collectors.toList());
+        masculino.forEach(pessoa -> System.out.println(pessoa));
+
+        System.out.println("");
+        System.out.println("Pessoas do sexo Feminino :");
+		System.out.println("---------------------------");
+		List<Pessoa> feminino = pessoas.stream()
+                                .filter(pessoa -> pessoa.getSexo().startsWith("F"))
+                                .collect(Collectors.toList());
+        feminino.forEach(pessoa -> System.out.println(pessoa));
+
+    }
+}

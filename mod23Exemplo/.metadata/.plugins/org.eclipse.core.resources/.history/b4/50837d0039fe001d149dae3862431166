@@ -1,0 +1,24 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GrupoPessoas {
+
+	private List<Pessoa> grupoTotal;
+	private List<Pessoa> grupoHomens;
+	private List<Pessoa> grupoMulheres;
+	
+	public GrupoPessoas() {
+	}
+	
+	public List<Pessoa> Carga(ArrayList<Pessoa> p) {
+		 //Carga dos dados
+        p.add(new Pessoa("Ramiro","M"));
+        p.add(new Pessoa("Vilma","F"));
+        p.add(new Pessoa("Arlet","F"));
+        p.add(new Pessoa("Oscar","M"));
+        p.add(new Pessoa("Moisés","M"));
+        return p;
+	}
+}

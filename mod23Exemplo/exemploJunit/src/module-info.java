@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Ramiro
+ *
+ */
+module exemploJunit {
+}
